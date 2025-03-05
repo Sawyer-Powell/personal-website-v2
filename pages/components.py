@@ -129,27 +129,24 @@ def PageContainer(*a):
         ),
         Div(
             Div(
-                Div(
-                    A(
-                        Logo(small=True),
-                        href="/",
-                    ),
-                    Div(cls='mb-8'),
-                    NavMenuPages(False),
-                    cls="p-4 h-fit min-w-sm hidden xl:block fixed",
+                A(
+                    Logo(small=True),
+                    href="/",
                 ),
-                Div(
-                    Div(
-                        *a,
-                        cls="xl:w-4xl"
-                    ),
-                    cls="m-5 pb-10 flex-1 flex justify-center"
-                ),
-                cls="flex"
+                Div(cls='mb-8'),
+                NavMenuPages(False),
+                cls="p-4 h-fit min-w-sm hidden xl:block fixed",
             ),
-            NavMenu(),
-            id="page-body",
+            Div(
+                Div(
+                    *a,
+                    cls="xl:w-4xl"
+                ),
+                cls="m-5 pb-10 flex-1 flex justify-center"
+            ),
+            cls="flex"
         ),
+        NavMenu(),
         Script('''
             const pageBody = document.getElementById('page-body');
             const loadScreen = document.getElementById('load-screen');

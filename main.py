@@ -2,12 +2,20 @@ from fasthtml.common import *
 from pages.about import AboutPage
 from pages.index import IndexPage
 
+import sys
+
+production = False
+
+if len(sys.argv) > 1 and sys.argv[1] == 'prod':
+    production = True
+
+print(production)
+
 app, rt = fast_app(
-    live=True,
+    live=production,
     pico=False,
     htmx=False,
     surreal=False,
-    default_hdrs=False,
     hdrs=(
         Link(rel='stylesheet', href="https://unpkg.com/franken-ui@2.0.0/dist/css/core.min.css", type='text/css'),
         Link(rel='stylesheet', href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"),

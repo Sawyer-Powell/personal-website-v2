@@ -22,7 +22,7 @@ const renderer = new THREE.WebGLRenderer(
 	}
 );
 
-renderer.setPixelRatio(4.);
+renderer.setPixelRatio(1.);
 
 const mainEl = document.getElementById('centerpiece')
 
