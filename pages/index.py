@@ -16,6 +16,7 @@ def IndexPage():
                 ),
                 A(
                     "cv",
+                    href="/professional-work",
                     cls="uk-btn uk-btn-default shadow-xl p-2 ms-2 px-4 mono transition-all",
                     style="height: 48px; border-radius: 100px",
                 ),

@@ -12,8 +12,21 @@ function generateNormal(mean = 0, stdDev = 1) {
   return z0 * stdDev + mean;
 }
 
+function getDimensions() {
+	let res = Math.min(mainEl.clientWidth, 800)
+	return [res, res]
+}
+
+function randColor() {
+	return new THREE.Color(0xfb4934).lerp(new THREE.Color(0xb8bb26), Math.random());
+}
+
+const mainEl = document.getElementById('centerpiece')
+
 const scene = new THREE.Scene();
+
 const camera = new THREE.PerspectiveCamera( 60, 1, 0.1, 1000 );
+camera.position.z = 5;
 
 const renderer = new THREE.WebGLRenderer(
 	{
@@ -22,41 +35,12 @@ const renderer = new THREE.WebGLRenderer(
 	}
 );
 
-renderer.setPixelRatio(1.);
-
-const mainEl = document.getElementById('centerpiece')
-
-function getDimensions() {
-	let res = Math.min(mainEl.clientWidth, 800)
-	return [res, res]
-}
-
+renderer.setPixelRatio(2.);
 renderer.setSize( getDimensions()[0], getDimensions()[1]);
 
-renderer.setAnimationLoop( animate );
 mainEl.appendChild( renderer.domElement );
-
 const geometry = new THREE.SphereGeometry( 0.015 );
-
 var spheres = new THREE.Group();
-
-function randColor() {
-	return new THREE.Color(0xfb4934).lerp(new THREE.Color(0xb8bb26), Math.random());
-}
-
-function addLine(spheres) {
-	let first = THREE.MathUtils.randInt(0, spheres.children.length - 1);
-	let second = THREE.MathUtils.randInt(0, spheres.children.length - 1);
-
-	let first_child = spheres.children[first]
-	let second_child = spheres.children[second]
-
-	const color = randColor();
-	const material = new THREE.LineBasicMaterial({color: color});
-	const geometry = new THREE.BufferGeometry().setFromPoints([first_child.position, second_child.position]);
-	const line = new THREE.Line(geometry, material);
-	spheres.add(line);
-}
 
 for (var i = 0; i < 1000; i++) {
 	const color = randColor();
@@ -73,24 +57,45 @@ for (var i = 0; i < 1000; i++) {
 	spheres.add(sphere)
 }
 
+function addLine(spheres) {
+	let first = THREE.MathUtils.randInt(0, spheres.children.length - 1);
+	let second = THREE.MathUtils.randInt(0, spheres.children.length - 1);
+
+	let first_child = spheres.children[first]
+	let second_child = spheres.children[second]
+
+	const color = randColor();
+	const material = new THREE.LineBasicMaterial({color: color});
+	const geometry = new THREE.BufferGeometry().setFromPoints([first_child.position, second_child.position]);
+	const line = new THREE.Line(geometry, material);
+	spheres.add(line);
+}
+
 for (var i = 0; i < 40; i++) {
 	addLine(spheres)
 }
 
 scene.add(spheres)
 
-camera.position.z = 5;
-function waitForNextFrame() {
-    return new Promise(resolve => {
-        requestAnimationFrame(resolve);
-    });
-}
-async function animate() {
-	await waitForNextFrame();
-	spheres.rotation.y += 0.0003337;
-	spheres.rotation.x += 0.000692;
-	spheres.rotation.z += 0.0004;
+const FPS = 10;
+const frametime = 1000/FPS;
+let lastFrameTime = 0;
+
+async function animate(currentTime) {
+	requestAnimationFrame(animate);
+
+	const deltaTime = currentTime - lastFrameTime;
+
+	if (deltaTime < frametime) return;
+
+	lastFrameTime = currentTime - (deltaTime % frametime);
+
+	spheres.rotation.y += 0.0009337;
+	spheres.rotation.x += 0.001292;
+	spheres.rotation.z += 0.0009;
 
 	renderer.setSize( getDimensions()[0], getDimensions()[1] );
 	renderer.render( scene, camera );
 }
+
+renderer.setAnimationLoop( animate );

@@ -1,18 +1,22 @@
 from fasthtml.common import *
-from pages.about import AboutPage
-from pages.index import IndexPage
 
+import markdown
+import frontmatter
+import os
 import sys
+
+from pages.components import Post
+from pages.index import IndexPage
 
 production = False
 
 if len(sys.argv) > 1 and sys.argv[1] == 'prod':
     production = True
 
-print(production)
+
 
 app, rt = fast_app(
-    live=production,
+    live=not production,
     pico=False,
     htmx=False,
     surreal=False,
@@ -80,6 +84,7 @@ app, rt = fast_app(
             html {
                 scrollbar-gutter: stable;
             }
+
         '''),
         Script(
             '''{
@@ -102,12 +107,31 @@ app, rt = fast_app(
     )
 )
 
+article_names = os.listdir('articles')
+md = markdown.Markdown()
+articles = []
+
+for article_name in article_names:
+    with open(os.path.join('articles', article_name), 'r') as article:
+        article = frontmatter.load(article)
+        article.content = md.convert(article.content)
+        article['url'] = article_name.split('.')[0]
+        articles.append(article)
+
+def PostPage(article):
+    return Title(article['title']), Post(article)
+
+# Create a function factory to create route handlers
+def create_article_handler(article_obj):
+    def handler():
+        return PostPage(article_obj)
+    return handler
+
+for article in articles:
+    app.get('/'+article['url'])(create_article_handler(article))
+
 @app.get('/')
 def Index():
     return Title('Sawyer Powell'), IndexPage()
-
-@app.get('/about')
-def About():
-    return Title('Sawyer Powell | About'), AboutPage()
 
 serve()

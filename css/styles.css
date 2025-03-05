@@ -1,1 +1,58 @@
 @import "tailwindcss";
+@theme {
+  --breakpoint-xs: 30rem;
+  --breakpoint-2xl: 100rem;
+  --breakpoint-3xl: 120rem;
+  --breakpoint-4xl: 140rem;
+}
+
+.article-body {
+  @apply flex flex-col items-center;
+  font-family: 'Open Sans', 'sans';
+}
+
+.article-body p {
+  @apply mb-4 text-lg;
+}
+
+.article-body *:not(img) {
+  @apply max-w-[42rem] w-full;
+}
+
+.article-body p:has(img) {
+  @apply !max-w-none;
+}
+
+.article-body h1,h2,h3,h4,h5,h6 {
+  @apply block;
+}
+
+.article-body > h1 {
+  @apply text-3xl font-semibold mb-4 mt-8;
+}
+
+.article-body > h2 {
+  @apply text-2xl font-semibold mb-4 mt-6;
+}
+
+.article-body > h3, h4, h5, h6 {
+  @apply text-xl font-semibold mb-4 mt-6;
+}
+
+.article-body a {
+  font-weight: 600 !important;
+  text-decoration-line: underline;
+  text-underline-offset: 4px;
+}
+
+.article-body ul {
+  list-style-type: square;
+}
+
+.article-body ul li {
+  @apply mb-1
+}
+
+.article-body img {
+  @apply rounded-xl my-8 shadow-xl;
+}

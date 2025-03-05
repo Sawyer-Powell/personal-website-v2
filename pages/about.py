@@ -34,7 +34,8 @@ def AboutPage():
                         </g>
                     </svg>
                 '''),
-                cls="w-[3rem] h-[3rem] bg-foreground p-[5px] rounded-full shadow-xl"
+                cls="bg-foreground p-[5px] rounded-full shadow-xl",
+                style="width: 2.2rem; height: 2.2rem;"
             ),
             cls="w-full flex justify-center mt-8"
         )
