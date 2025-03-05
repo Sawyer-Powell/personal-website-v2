@@ -60,5 +60,5 @@
 }
 
 .article-body img {
-  @apply rounded-xl my-8 shadow-xl;
+  @apply rounded-xl my-8 shadow-xl max-w-4xl;
 }
