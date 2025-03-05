@@ -1,9 +1,10 @@
 ---
-title: About Me
+title: About
 artist: alariko
 artist-page: https://www.artstation.com/alariko
 hero: https://cdna.artstation.com/p/assets/images/images/054/730/316/large/alariko-ilustracion-sin-titulo-15-1-01.jpg?1665231888
 date: 2025-03-05
+visible: false
 ---
 I was born into a small town in Indiana in the year 2000. For the first 8 years of my life I was homeschooled, so that I could travel all over the world with my parents. Eventually, my parents decided that my sister and I needed more structured learning, so in fourth grade, they enrolled us in the International School of Indiana. There I developed my love of math, computing, and physics. After high school, I enrolled in the Purdue University Honors Engineering program with ambitions of becoming an aerospace engineer. After learning that my passion wasn't in the field of aerospace, I switched majors a few times until I landed on Economics. During my time at Purdue I was a TA for Computational Economics, and a research assistant in the experimental economics laboratory. I graduated with honors, a B.S. in Economics and a minor in mathematics. Wanting to pursue software deeper at the end of college, and I picked up a job with [Counterpart](https://counterpart.biz) upon graduating as a project manager and developer. I live with my beautiful fiancee in the San Francisco Bay Area.
 

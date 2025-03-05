@@ -11,20 +11,20 @@ def Post(
     article
 ):
     return PageContainer(
-        H1(
-            article['title'],
-            cls="mono !font-semibold !text-5xl !mb-4"
-        ),
-        H2(
-            "image by ", A(article['artist'], href=article['artist-page'], cls='uk-link'),
-            cls="mono !text-2xl !italic !mb-8"
-        ),
         Div(
+            H1(
+                article['title'],
+                cls="mono !font-semibold !text-5xl !mb-4 !max-w-4xl w-full"
+            ),
+            H2(
+                "image by ", A(article['artist'], href=article['artist-page'], cls='uk-link'),
+                cls="mono !text-2xl !italic !mb-8 !max-w-4xl w-full"
+            ),
             Img(
                 src=article['hero'],
-                cls="shadow-xl rounded-xl !max-w-4xl w-full"
+                cls="shadow-xl rounded-xl w-full !max-w-4xl"
             ),
-            cls="w-full flex justify-center"
+            cls="w-full flex flex-col items-center"
         ),
         Div(
             Div(
@@ -57,19 +57,14 @@ def Post(
     )
 
 
-def ArticleCard(
-    title: str,
-    img: str,
-    link: str,
-    tags: List[str] = []
-):
+def ArticleCard(article):
     return A(
         Div(
             Div(
                 Div(
                     P(
                         Span(
-                            title,
+                            article['title'],
                             cls="font-bold xl:text-3xl text-2xl bg-background !p-1",
                             style="font-family: JetBrains Mono, monospace; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);"
                         ),
@@ -81,7 +76,7 @@ def ArticleCard(
                 ),
                 cls="flex items-center justify-center xl:h-[12rem] h-[10rem]",
                 style="background-size: cover",
-                data_src=img,
+                data_src=article['hero'],
                 data_uk_img=True
             ),
             Div(
@@ -98,7 +93,7 @@ def ArticleCard(
                             tag,
                             cls="uk-badge text-xs mono ms-2"
                         )
-                        for tag in tags
+                        for tag in []
                     ),
                     cls='flex-1 text-right'
                 ),
@@ -107,7 +102,7 @@ def ArticleCard(
             cls="uk-card uk-card-body uk-card-default !p-0 m-4 xl:mx-4 mx-0 max-w-lg !shadow-2xl",
             style="overflow: hidden",
         ),
-        href=link,
+        href='/'+article['url'],
     )
 
 def Logo(small = False):

@@ -132,6 +132,6 @@ for article in articles:
 
 @app.get('/')
 def Index():
-    return Title('Sawyer Powell'), IndexPage()
+    return Title('Sawyer Powell'), IndexPage(articles)
 
 serve()

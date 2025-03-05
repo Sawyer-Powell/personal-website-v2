@@ -4,6 +4,7 @@ artist: alariko
 hero: https://cdna.artstation.com/p/assets/images/images/075/315/164/large/alariko-1000028380-05-jpeg.jpg?1714257218
 artist-page: https://www.artstation.com/alariko
 date: 2025-03-05
+visible: false
 ---
 # Amble
 [Amble](https://github.com/Sawyer-Powell/Amble) is an omnitool for your data, allowing you to collect information from distinct sources into a unified format, and providing powerful interfaces to program, view and manipulate that information. Amble first aims to provide a plugin for Neovim that allows users to interact with their Amble data in Markdown and Org mode, making Amble a natural alternative to existing note taking/knowledge management systems. Amble then aims to provide a web framework that can allow users to create UIs for manipulating and viewing their data.

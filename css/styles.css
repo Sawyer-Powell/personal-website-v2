@@ -7,12 +7,12 @@
 }
 
 .article-body {
-  @apply flex flex-col items-center;
+  @apply flex flex-col items-center text-lg;
   font-family: 'Open Sans', 'sans';
 }
 
 .article-body p {
-  @apply mb-4 text-lg;
+  @apply mb-4;
 }
 
 .article-body *:not(img) {
@@ -47,10 +47,16 @@
 
 .article-body ul {
   list-style-type: square;
+  @apply mb-4;
 }
 
-.article-body ul li {
-  @apply mb-1
+.article-body ol {
+  list-style-type: number;
+  @apply mb-4;
+}
+
+.article-body li {
+  @apply mb-2;
 }
 
 .article-body img {
