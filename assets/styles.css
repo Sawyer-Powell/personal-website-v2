@@ -548,10 +548,12 @@
 .article-body ul {
   list-style-type: square;
   margin-bottom: calc(var(--spacing) * 4);
+  padding-inline-start: calc(var(--spacing) * 2);
 }
 .article-body ol {
   list-style-type: number;
   margin-bottom: calc(var(--spacing) * 4);
+  padding-inline-start: calc(var(--spacing) * 2);
 }
 .article-body li {
   margin-bottom: calc(var(--spacing) * 2);

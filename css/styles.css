@@ -47,12 +47,12 @@
 
 .article-body ul {
   list-style-type: square;
-  @apply mb-4;
+  @apply mb-4 ps-2;
 }
 
 .article-body ol {
   list-style-type: number;
-  @apply mb-4;
+  @apply mb-4 ps-2;
 }
 
 .article-body li {
