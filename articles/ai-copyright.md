@@ -3,8 +3,11 @@ title: Thoughts on the Economics on AI and Copyright
 artist: alariko
 hero: https://cdna.artstation.com/p/assets/images/images/079/702/348/large/alariko-img-20240802-175045-178.jpg?1725576581
 artist-page: https://www.artstation.com/alariko
-date: 2025-03-05
+date: 2024-10-03
 visible: true
+tags:
+  - econ
+  - ml
 ---
 Generative AI models, like ChatGPT, DALL-E, and others, are [known](https://harvardlawreview.org/blog/2024/04/nyt-v-openai-the-timess-about-face/) to have incorporated copyrighted works into their training data. These models provide facilities to generate completely new works that are similar, but not the same, as those they were trained on. In some cases models *cannot* produce output that exactly matches their training data. Text, images, video, and audio that generative AI models produce don't fit the official legal definition of a *derivative work*, which would put them in violation of copyright. Having your hard work used to train an AI, without your consent, and without compensation, can feel like theft. In much the same way that internet piracy feels like robbery. But, AI models give the appearance of mimicking human intelligence. As people, we read, watch and listen to copyrighted works. What we've consumed informs and teaches us how to create new art, movies, music and literature. So, if we are to say that AI models are violating copyright, or are breaking fair use, how can we argue that the basic process of our own creativity isn't?
 

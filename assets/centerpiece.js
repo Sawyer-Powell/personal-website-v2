@@ -77,7 +77,7 @@ for (var i = 0; i < 40; i++) {
 
 scene.add(spheres)
 
-const FPS = 10;
+const FPS = 20;
 const frametime = 1000/FPS;
 let lastFrameTime = 0;
 

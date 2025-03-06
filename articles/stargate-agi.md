@@ -3,12 +3,16 @@ title: Stargate and the Problem With AGI
 artist: frederick sandys
 hero: https://images.unsplash.com/photo-1576773689115-5cd2b0223523?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHBhaW50aW5nfGVufDB8fDB8fHww
 artist-page: https://en.wikipedia.org/wiki/Frederick_Sandys
-date: 2025-03-05
+date: 2025-01-22
 visible: true
+tags:
+  - econ
+  - ml
 ---
 OpenAI recently announced their Stargate Project aimed at investing $500 billion into building data centers across the United States over the course of 2025 to 2029. The stated purpose of this investment is to further strengthen OpenAI's, and by proxy America's, lead in creating advanced machine learning models. The real purpose of this push from OpenAI (and the express purpose of their organization) is to develop **AGI**, or artificial general intelligence. The hope of AGI is to create a base AI model that can quickly specialize and do useful work in any field. Companies would enter into contracts with OpenAI to use their AGI model, deploying it to actively do work and make decisions for the company. The endeavor of AGI is to create virtual employees that replace human labor.
 
 # What is AGI, and Why is it Hard?
+
 To me, an AGI system primarily differs from our current systems in its capacity to make meaningfully useful decisions autonomously. If you want an AI employee, that employee needs to integrate large amounts of sophisticated information about its task and effectively execute it. Currently, for any complex work, our current systems are not able to complete long horizon tasks. The most compelling attempt at trying to do this is Devin, an AI product meant to replace software engineers. If you watch anyone trying to use Devin on YouTube, it quickly becomes clear that once assigned a task, it ends up making a small mistake, and perpetuates that mistake through a chain of poorly planned actions. This is emblematic of the general capacities of our current models, they can somewhat effectively execute small scale tasks that they have a lot of data on, but fail at long term planning and integrating large volumes of contextual information.
 
 This gets to what I see as a fundamental challenge in creating AGI:

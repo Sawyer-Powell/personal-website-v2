@@ -60,5 +60,21 @@
 }
 
 .article-body img {
-  @apply rounded-xl 3xl:my-8 my-4 shadow-xl;
+  @apply rounded-xl 3xl:my-8 my-4 shadow-xl w-full;
+}
+
+code {
+  font-family: 'JetBrains Mono', 'mono';
+}
+
+code.hljs {
+  @apply rounded-xl shadow-lg my-4 mb-8 text-base;
+}
+
+code:not(.hljs) {
+  @apply font-semibold;
+}
+
+pre {
+  max-width: calc(100vw - 2em) !important;
 }

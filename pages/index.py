@@ -3,6 +3,9 @@ from .components import *
 
 def IndexPage(articles): 
     visible_articles = list(filter(lambda a: a['visible'] == True, articles))
+    visible_articles.sort(key=lambda a: a['date'], reverse=True)
+    for a in visible_articles:
+        print(a['date'])
 
     return PageContainer( 
         Logo(),

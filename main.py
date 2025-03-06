@@ -21,6 +21,19 @@ app, rt = fast_app(
     htmx=False,
     surreal=False,
     hdrs=(
+        Link(rel="stylesheet", href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/base16/gruvbox-dark-medium.min.css"),
+        Script(src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"),
+        Script(src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/languages/lisp.min.js"),
+        Script(src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/languages/yaml.min.js"),
+        Script(id="MathJax-script", src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"),
+        Script('''
+            hljs.highlightAll();
+            window.MathJax = {
+              tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+              }
+            };
+        '''),
         Link(rel='stylesheet', href="https://unpkg.com/franken-ui@2.0.0/dist/css/core.min.css", type='text/css'),
         Link(rel='stylesheet', href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"),
         Link(rel='stylesheet', href="./assets/styles.css", type='text/css'),
@@ -108,7 +121,7 @@ app, rt = fast_app(
 )
 
 article_names = os.listdir('articles')
-md = markdown.Markdown()
+md = markdown.Markdown(extensions=['fenced_code'])
 articles = []
 
 for article_name in article_names:

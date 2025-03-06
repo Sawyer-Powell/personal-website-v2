@@ -1,5 +1,6 @@
 from fasthtml.common import *
 from typing import List
+import datetime
 
 def Title(*a, **k):
     return H1(*a, cls="text-foreground text-4xl font-semibold", **k)
@@ -10,6 +11,8 @@ def Subtitle(*a, **k):
 def Post(
     article
 ):
+    pretty_date = article['date'].strftime("%B %-d, %Y")
+
     return PageContainer(
         Div(
             H1(
@@ -45,7 +48,11 @@ def Post(
                 cls="bg-foreground p-[5px] rounded-full shadow-xl",
                 style="width: 2.2rem; height: 2.2rem;"
             ),
-            cls="w-full flex justify-center mt-8"
+            Div(
+                pretty_date,
+                cls="my-4 mono font-semibold"
+            ),
+            cls="w-full flex flex-col items-center mt-8"
         ),
         Div(
             Div(
@@ -58,6 +65,8 @@ def Post(
 
 
 def ArticleCard(article):
+    pretty_date = article['date'].strftime("%B %-d, %Y")
+
     return A(
         Div(
             Div(
@@ -82,7 +91,7 @@ def ArticleCard(article):
             Div(
                 Div(
                     H3(
-                        "March 3, 2025",
+                        pretty_date,
                         cls="text-xs p-2"
                     ),
                     cls='flex-1'
@@ -93,7 +102,7 @@ def ArticleCard(article):
                             tag,
                             cls="uk-badge text-xs mono ms-2"
                         )
-                        for tag in []
+                        for tag in article['tags']
                     ),
                     cls='flex-1 text-right'
                 ),
