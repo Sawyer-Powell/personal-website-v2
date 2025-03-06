@@ -20,7 +20,7 @@
 }
 
 .article-body p:has(img) {
-  @apply !max-w-none;
+  @apply !max-w-4xl;
 }
 
 .article-body h1,h2,h3,h4,h5,h6 {
@@ -60,5 +60,5 @@
 }
 
 .article-body img {
-  @apply rounded-xl my-8 shadow-xl max-w-4xl;
+  @apply rounded-xl 3xl:my-8 my-4 shadow-xl;
 }
