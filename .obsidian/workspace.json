@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "articles/capitalism.md",
+                "file": "articles/fossora.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "capitalism"
+              "title": "fossora"
             }
           }
         ],
@@ -185,6 +185,7 @@
   },
   "active": "4c86caad144a5522",
   "lastOpenFiles": [
+    "articles/capitalism.md",
     "css/styles.css~",
     "pages/components.py~",
     "articles/fossora.md",
@@ -195,7 +196,6 @@
     "articles/raft-kubernetes.md",
     "articles/stargate-agi.md",
     "articles/engineer-solutions.md",
-    "articles/capitalism.md",
     "articles/ai-copyright.md",
     "pages/index.py~",
     "articles/about.md",

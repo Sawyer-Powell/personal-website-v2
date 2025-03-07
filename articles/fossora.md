@@ -1,6 +1,6 @@
 ---
 title: Fossora - a Distributed Mesh for Containers
-artist: michel etienne dcescourtilz
+artist: michel etienne descourtilz
 hero: https://the-public-domain-review.imgix.net/collections/atlas-des-champignons/deschampignonscatladesc_0011-featured.jpeg?fit=max&w=1100&h=850&auto=format,compress
 artist-page: https://en.wikipedia.org/wiki/Michel_%C3%89tienne_Descourtilz
 date: 2025-01-21
