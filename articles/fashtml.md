@@ -1,5 +1,5 @@
 ---
-title: How I Built This Website
+title: How FastHTML Powers this Website
 artist: tony etienne
 hero: https://cdnb.artstation.com/p/assets/images/images/023/659/429/4k/tony-etienne-more-brains-in-jars-001.jpg?1579916139
 artist-page: https://www.artstation.com/plongitudes
@@ -8,8 +8,6 @@ visible: true
 tags:
   - swe
 ---
-# Let's Talk About FastHTML
-
 [FastHTML](https://fastht.ml/) is probably one of the most exciting things happening in the web world right now. If you haven't seen it before, it's powered by what are called "fast tags"; implementations of every HTML tag as Python functions. Since you can pass python strings as arguments into fast tags, you can quickly hack together a templating system for whatever website you're building. The system becomes very powerful when paired with a web server that can leverage fast tags in responding to HTTP requests. It becomes extraordinarily powerful when paired with a JavaScript library like [htmx](https://htmx.org), allowing you to build fully interactive applications just from your server rendered HTML.
 
 Let's take a look at a simple example first
