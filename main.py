@@ -21,6 +21,10 @@ app, rt = fast_app(
     htmx=False,
     surreal=False,
     hdrs=(
+        Meta(property="og:title", content="Sawyer Powell"),
+        Meta(property="og:description", content="computer science / engineering / art"),
+        Meta(property="og:image", content="./assets/point-cloud.png"),
+        Meta(property="og:type", content="website"),
         Link(rel='stylesheet', href="./assets/styles.css", type='text/css'),
         Link(rel="stylesheet", href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/base16/gruvbox-dark-medium.min.css"),
         Script(src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"),
@@ -136,7 +140,10 @@ for article_name in article_names:
         articles.append(article)
 
 def PostPage(article):
-    return Title(article['title']), Post(article)
+    return (
+        Title(article['title']),
+        Post(article)
+    )
 
 def create_article_handler(article_obj):
     def handler():
