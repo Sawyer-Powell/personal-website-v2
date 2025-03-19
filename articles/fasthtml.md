@@ -8,7 +8,7 @@ visible: true
 tags:
   - swe
 ---
-[FastHTML](https://fastht.ml/) is one my favorite things happening in the web world right now. If we haven't seen it before, it's powered by what are called "fast tags"; implementations of every HTML tag as Python functions. Since we can pass python strings as arguments into fast tags, we can quickly hack together a templating system for whatever website we're building. The system becomes very powerful when paired with a web server that can leverage fast tags in responding to HTTP requests. It becomes extraordinarily powerful when paired with a JavaScript library like [htmx](https://htmx.org), allowing we to build fully interactive applications just from wer server rendered HTML.
+[FastHTML](https://fastht.ml/) is one my favorite things happening in the web world right now. If you haven't seen it before, it's powered by what are called "fast tags"; implementations of every HTML tag as Python functions. Since we can pass python strings as arguments into fast tags, we can quickly hack together a templating system for whatever website we're building. The system becomes very powerful when paired with a web server that can leverage fast tags in responding to HTTP requests. It becomes extraordinarily powerful when paired with a JavaScript library like [htmx](https://htmx.org), allowing we to build fully interactive applications just from wer server rendered HTML.
 
 Let's take a look at a simple example first
 
