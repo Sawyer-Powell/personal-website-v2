@@ -9,5 +9,8 @@ wheels/
 .venv
 .DS_Store
 .sesskey
-
 node_modules/
+.obsidian/graph.json
+.obsidian/workspace.json
+.obsidian/graph.json
+.obsidian/workspace.json
