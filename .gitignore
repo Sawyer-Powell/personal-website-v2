@@ -8,5 +8,6 @@ wheels/
 
 .venv
 .DS_Store
+.sesskey
 
 node_modules/
