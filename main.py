@@ -21,6 +21,7 @@ app, rt = fast_app(
     htmx=False,
     surreal=False,
     hdrs=(
+        Link(rel='stylesheet', href="./assets/styles.css", type='text/css'),
         Link(rel="stylesheet", href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/base16/gruvbox-dark-medium.min.css"),
         Script(src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"),
         Script(src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/languages/lisp.min.js"),
@@ -34,9 +35,7 @@ app, rt = fast_app(
               }
             };
         '''),
-        Link(rel='stylesheet', href="https://unpkg.com/franken-ui@2.0.0/dist/css/core.min.css", type='text/css'),
         Link(rel='stylesheet', href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"),
-        Link(rel='stylesheet', href="./assets/styles.css", type='text/css'),
         Style('''
             :root {
               /* Light theme - keeping for reference but with Gruvbox light colors */
@@ -109,6 +108,7 @@ app, rt = fast_app(
             }''',
             type="importmap",
         ),
+        Link(rel='stylesheet', href="https://unpkg.com/franken-ui@2.0.0/dist/css/core.min.css", type='text/css'),
         Script(
             src="https://unpkg.com/franken-ui@2.0.0/dist/js/core.iife.js",
             type="module"
@@ -125,7 +125,11 @@ md = markdown.Markdown(extensions=['fenced_code'])
 articles = []
 
 for article_name in article_names:
-    with open(os.path.join('articles', article_name), 'r') as article:
+    path = os.path.join('articles', article_name)
+    if os.path.isdir(path):
+        continue
+
+    with open(path, 'r') as article:
         article = frontmatter.load(article)
         article.content = md.convert(article.content)
         article['url'] = article_name.split('.')[0]
@@ -134,7 +138,6 @@ for article_name in article_names:
 def PostPage(article):
     return Title(article['title']), Post(article)
 
-# Create a function factory to create route handlers
 def create_article_handler(article_obj):
     def handler():
         return PostPage(article_obj)
