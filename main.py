@@ -13,7 +13,7 @@ production = False
 if len(sys.argv) > 1 and sys.argv[1] == 'prod':
     production = True
 
-
+print(f"Production? {production}")
 
 app, rt = fast_app(
     live=not production,
